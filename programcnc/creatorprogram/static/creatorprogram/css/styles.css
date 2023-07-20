@@ -1,0 +1,133 @@
+.data{
+    float: left;
+}
+.program-label{
+    float: left;
+    display: inline-block;
+    min-width: 100px;
+    vertical-align: top;
+
+}
+
+.program{
+float:left;
+}
+
+.btn_save {
+    float:right;
+}
+
+.form-label {
+    display: inline-block;
+    min-width: 240px;
+    vertical-align: top;
+}
+
+.dropbtn{
+    background-color:#4CAF50;
+    color:white;
+    padding:16px;
+    font-size: 16px;
+    border:none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+background-color:#2980B9}
+
+.dropdown{
+    position:relative;
+    display:inline-block;
+}
+
+.menu{
+    float:right;
+    position:relative;
+    display:inline-block;
+    font-size: 16px;
+    padding:16px;
+    border: none;
+    font: 16px "Trebuchet MS", "Lucida Sans";
+    cursor:pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position:absolute;
+    background-color:#f1f1f1;
+    min-width:160px;
+    box-shadow:0px 8px 16px 0px rgba(0,0,0,0,2);
+    z-index:1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding:12px 16px;
+    text-decoration:none;
+    display: block;
+}
+
+.dropdown-content a: hover{background-color:#ddd;}
+
+.show{display:block;}
+
+.rounded {
+    counter-reset: li;
+    list-style: none;
+    font: 16px "Trebuchet MS", "Lucida Sans";
+    padding: 0.1;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+
+.rounded a {
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em 2em;
+    margin: .5em 0;
+    background: #DAD2CA;
+    color: #444;
+    text-decoration: none;
+    border-radius: .3em;
+    transition: .3s ease-out;
+}
+
+.rounded a:hover {background: #E9E4E0;}
+.rounded a:hover:before {transform: rotate(360deg);}
+.rounded a:before {
+    content:counter(li);
+    counter-increment: li;
+    position: absolute;
+    left: -1.3em;
+    top: 50%;
+    margin-top: -1.3em;
+    background: #8FD4C1;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    border: .3em solid white;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 2em;
+    transition: all .3s ease-out;
+}
+
+
+img {width: 700px; height: auto;}
+
+.turn-shaft{
+width: 700px; height: auto;
+
+}
+
+.list_program-label{
+padding:10px;
+}
+.list_program{
+float:right;
+padding:10px;
+}
+.btn_pr{
+float:right;
+padding:10px;
+}
+

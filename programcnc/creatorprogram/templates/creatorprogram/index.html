@@ -1,0 +1,11 @@
+{% extends 'creatorprogram/base.html' %}
+
+{% block content %}
+<ol class="rounded">
+    {% for m in operation_all %}
+    <li><a href = "{% url m.url_name %}">{{m.title}}</a></li>
+    {% endfor %}
+</ol>
+
+
+{% endblock %}

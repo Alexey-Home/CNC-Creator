@@ -1,0 +1,51 @@
+{% extends 'creatorprogram/base.html' %}
+{% block content %}
+<h1>{{ title }}</h1>
+<form method = "post">
+    <div class="data">
+    {% csrf_token %}
+    <div class="form-error">{{ form.non_field_errors }}</div>
+
+    {% for f in form %}
+        {% if f.label in out_field_threadmill %}
+            <p><label class="form-label" for="{{ f.id_for_label }}">{{ f.label }}:</label>{{ f }}</p>
+            <div class="form-error">{{ f.errors }}</div>
+        {% endif %}
+    {% endfor %}
+
+    <button type="submit" name="add">Добавить</button><button type="submit" name="clean_tr">Очистить</button>
+    <p><label class="form-label" for="{{ form.Program.id_for_label }}">{{ form.trajectory.label }}:</label>{{ form.trajectory }}</p>
+    <div class="form-error">{{ f.errors }}</div>
+    {% for f in form %}
+        {% if f.label not in not_filed_output and f.label not in out_field_threadmill %}
+            <p><label class="form-label" for="{{ f.id_for_label }}">{{ f.label }}:</label>{{ f }}</p>
+            <div class="form-error">{{ f.errors }}</div>
+        {% endif %}
+    {% endfor %}
+    <p><button type="submit" name="generate">Сгенерировать</button></p>
+    </div>
+    <div class="program">
+        <p><label class="program-label" for="{{ form.Program.id_for_label }}">{{ form.program.label }}:</label>{{ form.program }}</p>
+        <div class="form-error">{{ f.errors }}</div>
+        <button class="btn_save" name="clean" type="submit">Очистить</button>
+        <button class="btn_save" name="save" type="submit">Сохранить</button>
+    </div>
+        <div class="program">
+        <p><label class="list_program-label" for="{{ form.Program.id_for_label }}">{{ form.list_program.label }}:</label></p>
+        <div class="list_program">{{ form.list_program }}</div>
+        <div class="form-error">{{ f.errors }}</div>
+        <div class="btn_pr">
+        <button name="del_prog" type="submit">Удалить</button>
+        <button name="load_prog" type="submit">Загрузить</button></div>
+    </div>
+</form>
+
+
+
+{% for pic in pictures %}
+{% if pic.pictures %}
+<p><img class="img-article-left thumb" src="{{ pic.pictures.url }}"></p>
+{% endif %}
+{% endfor %}
+
+{% endblock %}

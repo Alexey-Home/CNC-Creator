@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <link type="text/css" href="{% static 'creatorprogram/css/styles.css' %}" rel="stylesheet" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<script type="text/javascript" src="{% static 'creatorprogram/js/functions.js' %}"></script>
+	<link rel="shortcut icon" href="{% static 'creatorprogram/images/main.ico' %}" type="image/x-icon"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+{% block mainmenu %}
+<div class="dropdown">
+	<button onclick="myFunctionMill()" class="dropbtn">Фрезерная обработка</button>
+	<div id="myDropdownMill" class="dropdown-content">
+		{% for m in operation_mill %}
+		<a href = "{% url m.url_name %}">{{m.title}}</a>
+		{% endfor %}
+	</div>
+</div>
+
+<div class="dropdown">
+	<button onclick="myFunctionTurn()" class="dropbtn">Токарная обработка</button>
+	<div id="myDropdownTurn" class="dropdown-content">
+		{% for m in operation_turn %}
+		<a href = "{% url m.url_name %}">{{m.title}}</a>
+		{% endfor %}
+	</div>
+</div>
+
+<div class="menu">
+	<a href="{% url 'home' %}">На главную</a>
+	{% if request.user.is_authenticated %}
+		{{user.username}} | <a href="{% url 'logout' %}">Выйти</a>
+		{% else %}
+		<a href="{% url 'register' %}">Регистрация</a> | <a href="{% url 'login' %}">Войти</a>
+	{% endif %}
+</div>
+
+{% endblock mainmenu %}
+
+{% block content %}
+{% endblock %}
+
+
+</body>
+</html>
